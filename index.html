@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos de Aruanda - Busca Sagrada</title>
+    <meta name="description" content="Busca personalizada de pontos de Umbanda. Linhagens, entidades específicas e muito axé.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars-container"></div>
+    
+    <header>
+        <div class="logo">
+            <h1>Pontos de Aruanda</h1>
+            <p class="subtitle">Encontrando a luz através do som</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-panel">
+            <div id="form-container" class="form-container">
+                <!-- Step 1: Linhagem -->
+                <div class="step" id="step-1">
+                    <label for="linhagem-select">Qual linhagem?</label>
+                    <div class="custom-select-wrapper">
+                        <select id="linhagem-select">
+                            <option value="ogum">Ogum</option>
+                            <option value="iemanja">Iemanjá</option>
+                            <option value="oxum">Oxum</option>
+                            <option value="xango">Xangô</option>
+                            <option value="iansa">Iansã</option>
+                            <option value="oxossi">Oxóssi</option>
+                            <option value="nana">Nanã</option>
+                            <option value="omulu">Omulu/Obaluaê</option>
+                            <option value="caboclo">Caboclo</option>
+                            <option value="preto velho">Preto-Velho</option>
+                            <option value="exu">Exu</option>
+                            <option value="pombagira">Pombagira</option>
+                            <option value="baiano">Baiano</option>
+                            <option value="cigano">Cigano</option>
+                            <option value="marinheiro">Marinheiro</option>
+                            <option value="ere">Erê</option>
+                            <option value="boiadeiro">Boiadeiro</option>
+                            <option value="malandro">Malandro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Step 2: Quantidade -->
+                <div class="step" id="step-2">
+                    <label for="quantidade-input">Quantos pontos por vez? (1-20)</label>
+                    <input type="range" id="quantidade-range" min="1" max="20" value="10">
+                    <span id="range-value">10</span>
+                </div>
+
+                <!-- Step 3: Específica? -->
+                <div class="step" id="step-3">
+                    <label>Entidade específica?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="especifica" value="sim">
+                            <span>Sim</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="especifica" value="nao" checked>
+                            <span>Não (Aleatório)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 4: Nome (Hidden by default) -->
+                <div class="step hidden" id="step-4">
+                    <label for="nome-entidade">Coloque o nome:</label>
+                    <input type="text" id="nome-entidade" placeholder="Ex: Zé Pelintra, Maria Padilha...">
+                </div>
+
+                <button id="search-btn-v2" class="primary-btn">Buscar na Internet</button>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Buscando pontos na internet...</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <div class="results-header">
+                <h2 id="result-title">Resultados</h2>
+                <button id="back-btn" class="secondary-btn">Nova Busca</button>
+            </div>
+            <div id="lyrics-grid" class="lyrics-grid">
+                <!-- Lyrics will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pontos de Aruanda. Axé e Luz.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
